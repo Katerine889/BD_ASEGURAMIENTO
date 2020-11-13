@@ -11,6 +11,15 @@ pool:
 
 steps:
 - script: echo Hello, world!
+- task: SqlAzureDacpacDeployment@1
+  inputs:
+    AuthenticationType: 'server'
+    DatabaseName: 'PROYECTO'
+    SqlUsername: 'usuarioazure'
+    SqlPassword: 'Escuintla.1'
+    deployType: 'DacpacTask'
+    DeploymentAction: 'Publish'
+    IpDetectionMethod: 'AutoDetect'
   displayName: 'Run a one-line script'
 
 - script: |
